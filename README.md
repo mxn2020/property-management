@@ -1,82 +1,94 @@
 # Property Management Platform
 
-## Pages & Features
+Manage rental properties, tenants, and maintenance requests.
 
-### 1. Dashboard
-- Total properties, units, and occupancy rate
-- Rent collection status (collected / outstanding / overdue)
-- Maintenance requests summary
-- Lease expiry alerts
-- Revenue chart
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Properties
-- Property list with type, location, status filters
-- Property detail: address, description, photos, amenities
-- Add / edit / delete properties
-- Unit breakdown per property (apartments, offices, etc.)
-- Property documents (deed, insurance, permits)
+## Tech Stack
 
-### 3. Units
-- Unit list per property with floor, size, status
-- Unit detail: type, rent amount, current tenant, lease dates
-- Unit photos & floor plans
-- Vacancy tracking
-- Unit comparison view
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Tenants
-- Tenant directory with search & filters
-- Tenant profile: contact info, lease history, payment record
-- Tenant screening data
-- Communication log
-- Move-in / move-out checklist
+## Getting Started
 
-### 5. Leases
-- Create lease agreement (tenant, unit, dates, rent, deposit, terms)
-- Lease renewal & termination workflow
-- Lease document generation (PDF)
-- E-signature support
-- Rent escalation scheduling
-- Lease expiry calendar & alerts
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Rent & Payments
-- Rent roll overview (all units, expected vs. collected)
-- Record payments (bank transfer, cash, check)
-- Auto-generate monthly invoices
-- Late fee calculation
-- Payment receipt generation
-- Payment history per tenant
+## License
 
-### 7. Maintenance
-- Submit maintenance request (tenant or manager)
-- Request detail: description, photos, priority, status
-- Assign to vendor / handyman
-- Track status (open → in-progress → completed)
-- Recurring maintenance scheduling
-- Vendor directory
+MIT © Mehdi Nabhani
 
-### 8. Accounting
-- Income & expense tracking per property
-- Chart of accounts
-- Bank reconciliation
-- Tax-ready financial reports
-- Owner distribution / payout management
+---
 
-### 9. Communications
-- Tenant announcements & notices
-- Email / SMS notifications
-- Document sharing (lease, notices, policies)
-- Maintenance update notifications
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Reports
-- Occupancy rate trends
-- Rent collection rate
-- Maintenance cost by property / category
-- P&L per property
-- Export as PDF / CSV
+# {{APP_TITLE}}
 
-### 11. Settings
-- Company / landlord profile
-- Payment methods configuration
-- Late fee policies
-- Notification preferences
-- User roles & permissions
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
